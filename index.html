@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do tempo</title>
+</head>
+<body>
+    <h1>Consulte a previsão do tempo da sua cidade</h1>
+
+    <article class="organizar">
+    <link rel="stylesheet" href="index.css">
+    <label id="titulo" title="Nome cidade">Digite o nome da cidade:</label>
+    <input type="text" id="nome_cidade" name="nome_cidade">
+    <input type="button" id="pesquisa_botao" value="Pesquisar" onclick="chamarPrevisaoWeatherAPI()">
+
+    <article class="bloco_texto">
+    <!-- Adicionando o elemento para exibir a previsão do tempo -->
+    <div id="previsao_tempo"></div>
+    </article>
+
+</article>
+
+</body>
+</html>
+
+<script>
+    function chamarPrevisaoWeatherAPI() {
+        const cidade = document.getElementById('nome_cidade').value;
+        const apiKey = 'ce17c1e16e173bf400a987117498319f';
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&lang=pt_br`;
+      
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao obter os dados.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                mostrarPrevisao(data);
+            })
+            .catch(error => {
+                console.error('Erro ao obter a previsão do tempo:', error);
+                alert('Erro ao obter a previsão do tempo. Por favor, tente novamente.');
+            });
+
+        function mostrarPrevisao(data) {
+            const previsaoElement = document.getElementById('previsao_tempo');
+            const temperatura = (data.main.temp - 273.15).toFixed(2); 
+            previsaoElement.innerHTML = `
+                <h2>Previsão do Tempo para ${data.name}</h2>
+                <p><strong>Temperatura:</strong> ${temperatura}°C</p>
+                <p><strong>Descrição:</strong> ${data.weather[0].description}</p>
+                <p><strong>Umidade:</strong> ${data.main.humidity}%</p>
+                <p><strong>Pressão:</strong> ${data.main.pressure} hPa</p>
+            `;
+        }
+    }
+</script>

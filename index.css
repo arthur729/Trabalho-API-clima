@@ -1,0 +1,59 @@
+body
+{
+background-color: rgb(190, 190, 190);
+}
+
+.organizar
+{
+    text-align: center;
+    margin-top: 180px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 25px;
+    background-color: aliceblue;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    
+
+}
+
+#nome_cidade {
+    width: 300px; /* Defina a largura desejada */
+    height: 40px; /* Defina a altura desejada */
+    font-size: 16px; /* Defina o tamanho da fonte */
+    padding: 10px; /* Adicione um preenchimento interno para espaço dentro do input */
+    border: 2px solid #ccc; /* Adicione uma borda */
+    border-radius: 5px; /* Adicione cantos arredondados */
+    box-sizing: border-box; /* Mantenha a largura e a altura incluindo preenchimento e borda */
+    font-size: 20px;
+}
+
+#pesquisa_botao
+{
+    width: 150px; /* Defina a largura desejada */
+    height: 40px; /* Defina a altura desejada */
+    font-size: 16px; /* Defina o tamanho da fonte */
+    padding: 10px; /* Adicione um preenchimento interno para espaço dentro do input */
+    border: 2px solid #c7b3f7; /* Adicione uma borda */
+    border-radius: 5px; /* Adicione cantos arredondados */
+    box-sizing: border-box; /* Mantenha a largura e a altura incluindo preenchimento e borda */
+    font-size: 20px;
+}
+
+#previsao_tempo {
+    border: 2px solid #7db1ae; /* Adicione uma borda */
+    border-radius: 10px; /* Adicione cantos arredondados */
+    padding: 10px; /* Adicione um preenchimento interno */
+    margin-bottom: 20px; /* Adicione margem inferior para espaçamento */
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 30px;
+}
+
+h1
+{
+ text-align: center;
+ margin-top: 50px;
+
+}
